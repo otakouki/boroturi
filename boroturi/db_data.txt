@@ -1,0 +1,22 @@
+CREATE DATABASE emergency;
+use emergency
+
+CREATE TABLE `users` (
+  `user_id` int(4) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(20) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `department` varchar(2) DEFAULT NULL,
+  `owner` varchar(5) DEFAULT "false",
+  PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `emergency` (
+  `emergency_id` int(4) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(20) NOT NULL,
+  `check_name` varchar(2) DEFAULT NULL,
+  `situation` varchar(20),
+  PRIMARY KEY (`emergency_id`)
+);
+ 
+
+grant all on emergency.* to ecc@'%.%.%.%' identified by 'ecc';
