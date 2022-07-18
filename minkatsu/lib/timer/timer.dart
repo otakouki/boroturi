@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minkatsu/module/db_chart.dart';
 import '../module/db_insert.dart';
 
 class TimerPage extends StatefulWidget {
@@ -33,8 +34,7 @@ class _TimerPageState extends State<TimerPage> {
             ElevatedButton(
               onPressed: () {
                 _timePicker(context);
-                DateTime now = DateTime.now();
-                var Dbns1 = Db_ins(false);
+                var Dbns1 = Db_ins(false, 1, "on");
               },
               child: const Text("時刻を選択"),
             )
