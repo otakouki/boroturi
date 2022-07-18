@@ -16,5 +16,6 @@ class InsertDatabase {
     final Database db = await GetupDB.database;
     await db.insert('getup', getupDB.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
+    print("iinsert end");
   }
 }

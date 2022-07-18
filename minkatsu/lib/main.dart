@@ -54,9 +54,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Map<String, dynamic>> _journals = [];
-
-  bool _isLoading = true;
+  @override
+  void initState() {
+    //アプリ起動時に一度だけ実行される
+    Db_sec().chart();
+  }
   // This function is used to fetch all data from the database
 
   var _selectIndex = 0;
@@ -97,13 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: const Icon(Icons.dark_mode),
         onPressed: () {
           Provider.of<MyTheme>(context, listen: false).toggle();
-          // DateTime now = DateTime.now();
-
-          // Db_ins(true);
-          Db_sec();
-          // Db_sec();
-
-          // print("main journals:" "${Db_sec.journals}");
+          Db_ins(true, 0, "off");
         },
       ),
     );
