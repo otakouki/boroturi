@@ -13,11 +13,11 @@ class Db_sec {
   static int cnt1 = 0;
 
   Db_sec() {
-    print(cnt1);
+    //print(cnt1);
     if (cnt1 >= 0 && journals.length >= 1) {
-      print("test");
+      //print("test");
       journals.asMap();
-      print(journals[0].daytime);
+      //print(journals[0].daytime);
     }
     chart();
   }
